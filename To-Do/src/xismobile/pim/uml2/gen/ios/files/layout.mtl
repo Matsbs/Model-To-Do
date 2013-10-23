@@ -22,7 +22,8 @@
 		[/for]
 
 [comment Funksjon som returnerer alle views som ikke er mainscreen/]
-@interface [c.name.toUpperFirst()/]Controller : UIViewController <NewTaskViewControllerDelegate, ViewNoteControllerDelegate,  UITableViewDataSource, UITableViewDelegate>
+
+@interface [c.name.toUpperFirst()/]Controller : UIViewController <[for (c : Class | spaces)][if (c.isMainScreen()._not())][c.name.toUpperFirst()/]ControllerDelegate,[/if][/for] UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *taskArray;
@@ -73,7 +74,7 @@
     self.navigationItem.rightBarButtonItem = newButton;  
 }
 
-- (void)addItemViewController:(NewTaskViewController *)controller didFinishEnteringItem:(Task *)item
+- (void)addItemViewController:(CreateNewTaskISController *)controller didFinishEnteringItem:(Task *)item
 {
     NSLog(@"This was returned from ViewControllerB %@",item.name);
     ['['/]self.taskArray addObject:item[']'/];
@@ -129,7 +130,7 @@
     }
 }
 
-- (void)removeItemViewController:(ViewNoteController *)controller didFinishEnteringItem:(Task *)item
+- (void)removeItemViewController:(ViewTaskISController *)controller didFinishEnteringItem:(Task *)item
 {
     if(['['/]self.taskArray containsObject:item[']'/]){
         ['['/]self.taskArray removeObject:item[']'/];
@@ -139,7 +140,7 @@
 }
 
 - (IBAction)newClicked:(id)sender {
-    NewTaskViewController *newTaskView = ['['/]['['/]NewTaskViewController alloc[']'/] init[']'/];
+    CreateNewTaskISController *newTaskView = ['['/]['['/]CreateNewTaskISController alloc[']'/] init[']'/];
     newTaskView.delegate = self;
     ['['/]self.navigationController pushViewController:newTaskView animated:YES[']'/];
 }
@@ -167,7 +168,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ['['/]self.tableView deselectRowAtIndexPath:indexPath animated:YES[']'/];
-    ViewNoteController *viewNote = ['['/]['['/]ViewNoteController alloc[']'/] init[']'/];
+    ViewTaskISController *viewNote = ['['/]['['/]ViewTaskISController alloc[']'/] init[']'/];
     viewNote.task = ['['/]self.taskArray objectAtIndex:indexPath.row[']'/];
     viewNote.delegate = self;
     ['['/]self.navigationController pushViewController:viewNote animated:YES[']'/];
@@ -189,6 +190,7 @@
 [/for]	
 [for (c : Class | spaces)] 
 	[if (c.isMainScreen()._not())]
+	[if (c.name = 'ViewTaskIS')]
 		[comment generate ViewNoteController.h file/]
 		[file (c.name.toUpperFirst()+'Controller.h', false, 'UTF-8')]
 		
@@ -217,9 +219,11 @@
 @end
 		[/file]
 	[/if]
+	[/if]
 [/for]
 [for (c : Class | spaces)] 
 	[if (c.isMainScreen()._not())]
+	[if (c.name = 'ViewTaskIS')]
 		[comment generate ViewNoteController.m file/]
 		[file (c.name.toUpperFirst()+'Controller.m', false, 'UTF-8')]
 #import "[c.name.toUpperFirst()/]Controller.h"
@@ -233,8 +237,8 @@
 
 - (void)viewDidLoad
 {
-    ['['/]'['['/]'/[']'/]super viewDidLoad[']'/];
-    CGRect screenRect = ['['/]'['['/]'/[']'/]['['/]'['['/]'/[']'/]UIScreen mainScreen[']'/] bounds[']'/];
+    ['['/]super viewDidLoad[']'/];
+    CGRect screenRect = ['['/]['['/]UIScreen mainScreen[']'/] bounds[']'/];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     self.title = @"Details";
@@ -289,9 +293,11 @@
 @end
 		[/file]
 	[/if]
+	[/if]
 [/for]
 [for (c : Class | spaces)] 
 	[if (c.isMainScreen()._not())]
+	[if (c.name = 'CreateNewTaskIS')]
 		[comment generate NewTaskController.h file/]
 		[file (c.name.toUpperFirst()+'Controller.h', false, 'UTF-8')]
 		
@@ -320,9 +326,11 @@
 @end
 		[/file]
 	[/if]
+	[/if]
 [/for]
 [for (c : Class | spaces)] 
 	[if (c.isMainScreen()._not())]
+	[if (c.name = 'CreateNewTaskIS')]
 		[comment generate NewTaskController.m file/]
 		[file (c.name.toUpperFirst()+'Controller.m', false, 'UTF-8')]
 #import "[c.name.toUpperFirst()/]Controller.h"
@@ -456,6 +464,7 @@
 @end
 
 		[/file]
+	[/if]
 	[/if]
 [/for]
 

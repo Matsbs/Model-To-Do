@@ -34,7 +34,7 @@
     self.navigationItem.rightBarButtonItem = newButton;  
 }
 
-- (void)addItemViewController:(NewTaskViewController *)controller didFinishEnteringItem:(Task *)item
+- (void)addItemViewController:(CreateNewTaskISController *)controller didFinishEnteringItem:(Task *)item
 {
     NSLog(@"This was returned from ViewControllerB %@",item.name);
     [self.taskArray addObject:item];
@@ -90,7 +90,7 @@
     }
 }
 
-- (void)removeItemViewController:(ViewNoteController *)controller didFinishEnteringItem:(Task *)item
+- (void)removeItemViewController:(ViewTaskISController *)controller didFinishEnteringItem:(Task *)item
 {
     if([self.taskArray containsObject:item]){
         [self.taskArray removeObject:item];
@@ -100,7 +100,7 @@
 }
 
 - (IBAction)newClicked:(id)sender {
-    NewTaskViewController *newTaskView = [[NewTaskViewController alloc] init];
+    CreateNewTaskISController *newTaskView = [[CreateNewTaskISController alloc] init];
     newTaskView.delegate = self;
     [self.navigationController pushViewController:newTaskView animated:YES];
 }
@@ -128,7 +128,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ViewNoteController *viewNote = [[ViewNoteController alloc] init];
+    ViewTaskISController *viewNote = [[ViewTaskISController alloc] init];
     viewNote.task = [self.taskArray objectAtIndex:indexPath.row];
     viewNote.delegate = self;
     [self.navigationController pushViewController:viewNote animated:YES];

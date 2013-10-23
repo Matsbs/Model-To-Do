@@ -1,10 +1,11 @@
 
 #import <UIKit/UIKit.h>
-#import "CreateNewTaskISController.h"
 #import "ViewTaskISController.h"
+#import "CreateNewTaskISController.h"
 #import "Task.h"
 
-@interface TaskListISController : UIViewController <NewTaskViewControllerDelegate, ViewNoteControllerDelegate,  UITableViewDataSource, UITableViewDelegate>
+
+@interface TaskListISController : UIViewController <ViewTaskISControllerDelegate,CreateNewTaskISControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *taskArray;
