@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISMobile="http:///schemas/XISMobile/_phk70DDxEeOAIuHwzcL-qg/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISMobile/_phk70DDxEeOAIuHwzcL-qg/5 model.profile.uml#_phqbYDDxEeOAIuHwzcL-qg">
+  <uml:Model xmi:id="_aamFQDsbEeO8mdWoeTb3-A" name="To_Do">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_aamFQTsbEeO8mdWoeTb3-A">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lcSREDsbEeO8mdWoeTb3-A" name="Task">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_qsUnUDsbEeO8mdWoeTb3-A" name="name" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rF5k8DsbEeO8mdWoeTb3-A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rGCH0DsbEeO8mdWoeTb3-A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rGT0oDsbEeO8mdWoeTb3-A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_rHx0QDsbEeO8mdWoeTb3-A" name="date" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rS8icDsbEeO8mdWoeTb3-A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rTCpEDsbEeO8mdWoeTb3-A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rTSgsDsbEeO8mdWoeTb3-A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_riA5MDsbEeO8mdWoeTb3-A" name="note" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rsY9MDsbEeO8mdWoeTb3-A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rshgEDsbEeO8mdWoeTb3-A" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rs4FYDsbEeO8mdWoeTb3-A">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DmqvkDsdEeO8mdWoeTb3-A" name="TaskListIS"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_iiRFEDsdEeO8mdWoeTb3-A" name="ViewTaskIS"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_nShIADsdEeO8mdWoeTb3-A" name="CreateNewTaskIS"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oUQjwDsbEeO8mdWoeTb3-A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oU8gQDsbEeO8mdWoeTb3-A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="model.profile.uml#_phqbYDDxEeOAIuHwzcL-qg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="model.profile.uml#_EUKFkB9vEeOZ6al_I843SA"/>
+    </profileApplication>
+  </uml:Model>
+  <XISMobile:XisEntity xmi:id="_pUAJgDsbEeO8mdWoeTb3-A" base_Class="_lcSREDsbEeO8mdWoeTb3-A"/>
+  <XISMobile:XisEntityAttribute xmi:id="_sb4gcDsbEeO8mdWoeTb3-A" type="String" base_Property="_qsUnUDsbEeO8mdWoeTb3-A"/>
+  <XISMobile:XisEntityAttribute xmi:id="_v_UyADsbEeO8mdWoeTb3-A" type="String" base_Property="_rHx0QDsbEeO8mdWoeTb3-A"/>
+  <XISMobile:XisEntityAttribute xmi:id="_yo-74DsbEeO8mdWoeTb3-A" type="String" base_Property="_riA5MDsbEeO8mdWoeTb3-A"/>
+  <XISMobile:XisInteractionSpace xmi:id="_hNNWoDsdEeO8mdWoeTb3-A" isMainScreen="true" base_Class="_DmqvkDsdEeO8mdWoeTb3-A"/>
+  <XISMobile:XisInteractionSpace xmi:id="_kMH-0DsdEeO8mdWoeTb3-A" base_Class="_iiRFEDsdEeO8mdWoeTb3-A"/>
+  <XISMobile:XisInteractionSpace xmi:id="_vyQUcDsdEeO8mdWoeTb3-A" base_Class="_nShIADsdEeO8mdWoeTb3-A"/>
+</xmi:XMI>

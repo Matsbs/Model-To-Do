@@ -9,7 +9,6 @@
 
 [template public generateElement(m : Model)]
 [comment @main/]
-
 [m.domain2objc()/]
 [m.generateConfigFiles()/]
 [m.interaction2objc()/]
