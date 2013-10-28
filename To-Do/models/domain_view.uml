@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISMobile="http:///schemas/XISMobile/_phk70DDxEeOAIuHwzcL-qg/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISMobile/_phk70DDxEeOAIuHwzcL-qg/5 model.profile.uml#_phqbYDDxEeOAIuHwzcL-qg">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISMobile="http:///schemas/XISMobile/_phk70DDxEeOAIuHwzcL-qg/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISMobile/_phk70DDxEeOAIuHwzcL-qg/5 file:/Users/matssandvoll/git/Model-To-Do/To-Do/models/model.profile.uml#_phqbYDDxEeOAIuHwzcL-qg">
   <uml:Model xmi:id="_aamFQDsbEeO8mdWoeTb3-A" name="To_Do">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_aamFQTsbEeO8mdWoeTb3-A">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -21,7 +21,7 @@
           <value xsi:nil="true"/>
         </defaultValue>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_riA5MDsbEeO8mdWoeTb3-A" name="note" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_riA5MDsbEeO8mdWoeTb3-A" name="description" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rsY9MDsbEeO8mdWoeTb3-A" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rshgEDsbEeO8mdWoeTb3-A" value="1"/>
@@ -29,10 +29,47 @@
           <value xsi:nil="true"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Nj86MDvwEeOnf4PYXWxfAQ" name="category" type="_FfCokDvwEeOnf4PYXWxfAQ" association="_Nj-vYDvwEeOnf4PYXWxfAQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Nj86MTvwEeOnf4PYXWxfAQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Nj86MjvwEeOnf4PYXWxfAQ" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_O4BxMDvwEeOnf4PYXWxfAQ" name="note" type="_A_y2EDvwEeOnf4PYXWxfAQ" association="_O4BxMzvwEeOnf4PYXWxfAQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O4BxMTvwEeOnf4PYXWxfAQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O4BxMjvwEeOnf4PYXWxfAQ" value="1"/>
+      </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_DmqvkDsdEeO8mdWoeTb3-A" name="TaskListIS"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_iiRFEDsdEeO8mdWoeTb3-A" name="ViewTaskIS"/>
-    <packagedElement xmi:type="uml:Class" xmi:id="_nShIADsdEeO8mdWoeTb3-A" name="CreateNewTaskIS"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_A_y2EDvwEeOnf4PYXWxfAQ" name="Note">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_b5VrYDvwEeOnf4PYXWxfAQ" name="description" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cZSWwDvwEeOnf4PYXWxfAQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cZS90DvwEeOnf4PYXWxfAQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_cZUL8DvwEeOnf4PYXWxfAQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FfCokDvwEeOnf4PYXWxfAQ" name="Category">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_X04-gDvwEeOnf4PYXWxfAQ" name="name" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YMK2EDvwEeOnf4PYXWxfAQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YMLdIDvwEeOnf4PYXWxfAQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_YMNSUDvwEeOnf4PYXWxfAQ">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_Nj-vYDvwEeOnf4PYXWxfAQ" name="task_category_1" memberEnd="_Nj-vYTvwEeOnf4PYXWxfAQ _Nj86MDvwEeOnf4PYXWxfAQ">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Nj-vYTvwEeOnf4PYXWxfAQ" name="task" type="_lcSREDsbEeO8mdWoeTb3-A" association="_Nj-vYDvwEeOnf4PYXWxfAQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Nj-vYjvwEeOnf4PYXWxfAQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Nj-vYzvwEeOnf4PYXWxfAQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_O4BxMzvwEeOnf4PYXWxfAQ" name="task_note_1" memberEnd="_O4BxNDvwEeOnf4PYXWxfAQ _O4BxMDvwEeOnf4PYXWxfAQ">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_O4BxNDvwEeOnf4PYXWxfAQ" name="task" type="_lcSREDsbEeO8mdWoeTb3-A" association="_O4BxMzvwEeOnf4PYXWxfAQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_O4BxNTvwEeOnf4PYXWxfAQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_O4BxNjvwEeOnf4PYXWxfAQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oUQjwDsbEeO8mdWoeTb3-A">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oU8gQDsbEeO8mdWoeTb3-A" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="model.profile.uml#_phqbYDDxEeOAIuHwzcL-qg"/>
@@ -44,7 +81,10 @@
   <XISMobile:XisEntityAttribute xmi:id="_sb4gcDsbEeO8mdWoeTb3-A" type="String" base_Property="_qsUnUDsbEeO8mdWoeTb3-A"/>
   <XISMobile:XisEntityAttribute xmi:id="_v_UyADsbEeO8mdWoeTb3-A" type="String" base_Property="_rHx0QDsbEeO8mdWoeTb3-A"/>
   <XISMobile:XisEntityAttribute xmi:id="_yo-74DsbEeO8mdWoeTb3-A" type="String" base_Property="_riA5MDsbEeO8mdWoeTb3-A"/>
-  <XISMobile:XisInteractionSpace xmi:id="_hNNWoDsdEeO8mdWoeTb3-A" isMainScreen="true" base_Class="_DmqvkDsdEeO8mdWoeTb3-A"/>
-  <XISMobile:XisInteractionSpace xmi:id="_kMH-0DsdEeO8mdWoeTb3-A" base_Class="_iiRFEDsdEeO8mdWoeTb3-A"/>
-  <XISMobile:XisInteractionSpace xmi:id="_vyQUcDsdEeO8mdWoeTb3-A" base_Class="_nShIADsdEeO8mdWoeTb3-A"/>
+  <XISMobile:XisEntity xmi:id="_DUjuADvwEeOnf4PYXWxfAQ" base_Class="_A_y2EDvwEeOnf4PYXWxfAQ"/>
+  <XISMobile:XisEntity xmi:id="_Jl0QsDvwEeOnf4PYXWxfAQ" base_Class="_FfCokDvwEeOnf4PYXWxfAQ"/>
+  <XISMobile:XisEntityAttribute xmi:id="_ZkOOIDvwEeOnf4PYXWxfAQ" base_Property="_X04-gDvwEeOnf4PYXWxfAQ"/>
+  <XISMobile:XisEntityAttribute xmi:id="_eQ-RIDvwEeOnf4PYXWxfAQ" base_Property="_b5VrYDvwEeOnf4PYXWxfAQ"/>
+  <XISMobile:XisEntityAssociation xmi:id="_ih_aYDvwEeOnf4PYXWxfAQ" base_Association="_O4BxMzvwEeOnf4PYXWxfAQ"/>
+  <XISMobile:XisEntityAssociation xmi:id="_j2BOEDvwEeOnf4PYXWxfAQ" base_Association="_Nj-vYDvwEeOnf4PYXWxfAQ"/>
 </xmi:XMI>

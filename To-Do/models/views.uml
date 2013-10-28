@@ -72,12 +72,13 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_88i5oTpbEeOh5fL5hM-Xhg" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_88i5ojpbEeOh5fL5hM-Xhg" value="1"/>
       </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_tmGwkDpaEeOh5fL5hM-Xhg" name="createNewTask"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_t7H-UDpaEeOh5fL5hM-Xhg" name="viewTask"/>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_1XNVYDpaEeOh5fL5hM-Xhg" name="TaskListIS:TaskListMenu"/>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_1y7oEDpaEeOh5fL5hM-Xhg" name="TaskListIS:TaskListMenu:CreateTaskList"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_1y7oEDpaEeOh5fL5hM-Xhg" name="TaskListIS:TaskListMenu:CreateTaskList">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_tmGwkDpaEeOh5fL5hM-Xhg" name="createNewTask"/>
+      </nestedClassifier>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_2GsRkDpaEeOh5fL5hM-Xhg" name="TaskListIS:TaskList"/>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_2qFSgDpaEeOh5fL5hM-Xhg" name="TaskListIS:TaskList:TaskListItem"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_UJQk0DvxEeOnf4PYXWxfAQ" name="Class1"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_QgTCkDpbEeOh5fL5hM-Xhg" name="TaskBE"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_88nLEDpbEeOh5fL5hM-Xhg" name="taskListIS_taskBE_1" memberEnd="_88nLETpbEeOh5fL5hM-Xhg _88i5oDpbEeOh5fL5hM-Xhg">
@@ -213,8 +214,7 @@
   <XISMobile:XisEntityAttribute xmi:id="_Kxnd8DpaEeOh5fL5hM-Xhg" base_Property="_E0DTUDpaEeOh5fL5hM-Xhg"/>
   <XISMobile:XisEntity xmi:id="_d26T0DpaEeOh5fL5hM-Xhg" base_Class="_BdSL0DpaEeOh5fL5hM-Xhg"/>
   <XISMobile:XisInteractionSpace xmi:id="_sPaqcDpaEeOh5fL5hM-Xhg" base_Class="_l5lJwDpaEeOh5fL5hM-Xhg"/>
-  <XISMobile:XisAction xmi:id="_vNXCQDpaEeOh5fL5hM-Xhg" base_Operation="_t7H-UDpaEeOh5fL5hM-Xhg"/>
-  <XISMobile:XisAction xmi:id="_yP170DpaEeOh5fL5hM-Xhg" base_Operation="_tmGwkDpaEeOh5fL5hM-Xhg"/>
+  <XISMobile:XisAction xmi:id="_vNXCQDpaEeOh5fL5hM-Xhg"/>
   <XISMobile:XisCompositeWidget xmi:id="_-jVGsDpaEeOh5fL5hM-Xhg" base_Class="_1XNVYDpaEeOh5fL5hM-Xhg"/>
   <XISMobile:XisCompositeWidget xmi:id="__y7GUDpaEeOh5fL5hM-Xhg" base_Class="_1y7oEDpaEeOh5fL5hM-Xhg"/>
   <XISMobile:XisCompositeWidget xmi:id="_JnySoDpbEeOh5fL5hM-Xhg" base_Class="_2GsRkDpaEeOh5fL5hM-Xhg"/>

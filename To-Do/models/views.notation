@@ -210,11 +210,11 @@
     <children xmi:type="notation:BasicCompartment" xmi:id="_l5uTvDpaEeOh5fL5hM-Xhg" type="7018">
       <children xmi:type="notation:Shape" xmi:id="_tmOFUDpaEeOh5fL5hM-Xhg" type="3013" fontName="Lucida Grande" fontHeight="11" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yQVEADpaEeOh5fL5hM-Xhg" source="Stereotype_Annotation">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yQVEATpaEeOh5fL5hM-Xhg" key="StereotypeWithQualifiedNameList" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yQVEAjpaEeOh5fL5hM-Xhg" key="StereotypeList" value="XIS-Mobile::XisAction"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yQVEAzpaEeOh5fL5hM-Xhg" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yQVEBDpaEeOh5fL5hM-Xhg" key="PropStereoDisplay" value=""/>
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yQVEBTpaEeOh5fL5hM-Xhg" key="StereotypePropertyLocation" value="Compartment"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fvPwgDvxEeOnf4PYXWxfAQ" key="StereotypeWithQualifiedNameList" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fvPwgTvxEeOnf4PYXWxfAQ" key="StereotypeList" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fvPwgjvxEeOnf4PYXWxfAQ" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fvPwgzvxEeOnf4PYXWxfAQ" key="PropStereoDisplay" value=""/>
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fvPwhDvxEeOnf4PYXWxfAQ" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
         <element xmi:type="uml:Operation" href="views.uml#_tmGwkDpaEeOh5fL5hM-Xhg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_tmOFUTpaEeOh5fL5hM-Xhg"/>
@@ -227,7 +227,6 @@
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vN2xgjpaEeOh5fL5hM-Xhg" key="PropStereoDisplay" value=""/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vN2xgzpaEeOh5fL5hM-Xhg" key="StereotypePropertyLocation" value="Compartment"/>
         </eAnnotations>
-        <element xmi:type="uml:Operation" href="views.uml#_t7H-UDpaEeOh5fL5hM-Xhg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_t7P6ITpaEeOh5fL5hM-Xhg"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_l5uTvTpaEeOh5fL5hM-Xhg"/>
@@ -280,13 +279,17 @@
         <element xmi:type="uml:Class" href="views.uml#_2qFSgDpaEeOh5fL5hM-Xhg"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_2qNOUTpaEeOh5fL5hM-Xhg"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_Y4IuwDvxEeOnf4PYXWxfAQ" type="3014" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+        <element xmi:type="uml:Class" href="views.uml#_UJQk0DvxEeOnf4PYXWxfAQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Y4IuwTvxEeOnf4PYXWxfAQ"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_l5uTwjpaEeOh5fL5hM-Xhg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_l5uTwzpaEeOh5fL5hM-Xhg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_l5uTxDpaEeOh5fL5hM-Xhg"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l5uTxTpaEeOh5fL5hM-Xhg"/>
     </children>
     <element xmi:type="uml:Class" href="views.uml#_l5lJwDpaEeOh5fL5hM-Xhg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l5tsoTpaEeOh5fL5hM-Xhg" x="324" y="304" width="301" height="163"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l5tsoTpaEeOh5fL5hM-Xhg" x="324" y="304" width="301" height="201"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_QgblcDpbEeOh5fL5hM-Xhg" type="2008" fontName="Lucida Grande" fontHeight="11" lineColor="0">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QgcMgDpbEeOh5fL5hM-Xhg" source="ShadowFigure">
