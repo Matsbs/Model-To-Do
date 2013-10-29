@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML">
+  <notation:Diagram xmi:id="_KOFjsECoEeOULYZHT96OfA" type="PapyrusUMLClassDiagram" name="ToDo" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_MwM7IECoEeOULYZHT96OfA" type="2007" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MwPXYECoEeOULYZHT96OfA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MwPXYUCoEeOULYZHT96OfA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MwP-cECoEeOULYZHT96OfA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MwP-cUCoEeOULYZHT96OfA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MwP-ckCoEeOULYZHT96OfA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_MwP-c0CoEeOULYZHT96OfA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_MwP-dECoEeOULYZHT96OfA" type="5026"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_MwP-dUCoEeOULYZHT96OfA" type="7016">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_MwP-dkCoEeOULYZHT96OfA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MwP-d0CoEeOULYZHT96OfA"/>
+      </children>
+      <element xmi:type="uml:Package" href="todo.uml#_MuiHMECoEeOULYZHT96OfA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MwM7IUCoEeOULYZHT96OfA" x="237" y="69"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_KOGKwECoEeOULYZHT96OfA"/>
+    <element xmi:type="uml:Model" href="todo.uml#_KNGFMECoEeOULYZHT96OfA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_X_feEECoEeOULYZHT96OfA" type="PapyrusUMLClassDiagram" name="ClassDiagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_X_feEUCoEeOULYZHT96OfA"/>
+    <element xmi:type="uml:Package" href="todo.uml#_MuiHMECoEeOULYZHT96OfA"/>
+  </notation:Diagram>
+</xmi:XMI>
