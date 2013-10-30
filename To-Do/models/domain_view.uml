@@ -40,7 +40,7 @@
         </defaultValue>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_FfCokDvwEeOnf4PYXWxfAQ" name="Category">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FfCokDvwEeOnf4PYXWxfAQ" name="Category1">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_X04-gDvwEeOnf4PYXWxfAQ" name="name" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YMK2EDvwEeOnf4PYXWxfAQ" value="1"/>
@@ -208,8 +208,8 @@
   <XISMobile:XisEntityAttribute xmi:id="_yo-74DsbEeO8mdWoeTb3-A" type="String" base_Property="_riA5MDsbEeO8mdWoeTb3-A"/>
   <XISMobile:XisEntity xmi:id="_DUjuADvwEeOnf4PYXWxfAQ" base_Class="_A_y2EDvwEeOnf4PYXWxfAQ"/>
   <XISMobile:XisEntity xmi:id="_Jl0QsDvwEeOnf4PYXWxfAQ" base_Class="_FfCokDvwEeOnf4PYXWxfAQ"/>
-  <XISMobile:XisEntityAttribute xmi:id="_ZkOOIDvwEeOnf4PYXWxfAQ" base_Property="_X04-gDvwEeOnf4PYXWxfAQ"/>
-  <XISMobile:XisEntityAttribute xmi:id="_eQ-RIDvwEeOnf4PYXWxfAQ" base_Property="_b5VrYDvwEeOnf4PYXWxfAQ"/>
+  <XISMobile:XisEntityAttribute xmi:id="_ZkOOIDvwEeOnf4PYXWxfAQ" type="String" base_Property="_X04-gDvwEeOnf4PYXWxfAQ"/>
+  <XISMobile:XisEntityAttribute xmi:id="_eQ-RIDvwEeOnf4PYXWxfAQ" type="String" base_Property="_b5VrYDvwEeOnf4PYXWxfAQ"/>
   <XISMobile:XisEntityAssociation xmi:id="_ih_aYDvwEeOnf4PYXWxfAQ" base_Association="_O4BxMzvwEeOnf4PYXWxfAQ"/>
   <XISMobile:XisEntityAssociation xmi:id="_j2BOEDvwEeOnf4PYXWxfAQ" base_Association="_Nj-vYDvwEeOnf4PYXWxfAQ"/>
   <XISMobile:XisInteractionSpace xmi:id="_-CuvMECpEeOAY-3_g0SN8g" isMainScreen="true" base_Class="_baxcsECpEeOAY-3_g0SN8g"/>

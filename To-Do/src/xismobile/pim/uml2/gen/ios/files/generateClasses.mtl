@@ -6,7 +6,10 @@
 [template public generateClasses(c : Class)]
 [comment generate class.h file/]
 [file (c.name + '.h', false, 'UTF-8')]
-
+[if (c.name = 'Task')]
+#import "Note.h"
+#import "Category1.h"
+[/if]
 #import <Foundation/Foundation.h>
 
 @interface [c.name.toUpperFirst()/] : NSObject
@@ -18,6 +21,12 @@
 		[/if]
 	[/for]			
 [/if]
+[comment for task/]
+[if (c.name = 'Task')]
+@property (nonatomic, retain) NSMutableArray *notes;
+@property (nonatomic, retain) Category1 *category;
+@property (nonatomic, retain) Note *note;
+[/if]
 
 @end
 [/file]
@@ -28,6 +37,22 @@
 #import "[c.name/].h"
 
 @implementation [c.name.toUpperFirst()/]
+
+[if (c.name = 'Task')]
+- (Category1* ) category{
+    if (_category == nil) {
+        _category = ['['/]['['/]Category1 alloc[']'/] init[']'/];
+    }
+    return _category;
+}
+
+- (Note* ) note{
+    if (_note == nil) {
+        _note = ['['/]['['/]Note alloc[']'/] init[']'/];
+    }
+    return _note;
+}
+[/if]
 
 @end
 
