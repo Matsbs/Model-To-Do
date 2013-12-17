@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISMobile="http:///schemas/XISMobile/_SXapEFhTEeOjBoMcdovZrg/10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISMobile/_SXapEFhTEeOjBoMcdovZrg/10 model.profile.uml#_SXapEVhTEeOjBoMcdovZrg">
+  <uml:Model xmi:id="_b3LsIGcaEeOaN6nxgFEQpg" name="Model">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_b3LsIWcaEeOaN6nxgFEQpg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gFEB0GcaEeOaN6nxgFEQpg" name="Class1">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_hgO_UGcaEeOaN6nxgFEQpg" name="Class3"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_hQ5i0GcaEeOaN6nxgFEQpg" name="Class2"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_f3ff4GcaEeOaN6nxgFEQpg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_f31eIGcaEeOaN6nxgFEQpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="model.profile.uml#_SXapEVhTEeOjBoMcdovZrg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="model.profile.uml#_EUKFkB9vEeOZ6al_I843SA"/>
+    </profileApplication>
+  </uml:Model>
+  <XISMobile:XisInteractionSpace xmi:id="_g7U7cGcaEeOaN6nxgFEQpg" base_Class="_gFEB0GcaEeOaN6nxgFEQpg"/>
+  <XISMobile:XisLabel xmi:id="_jXajYGcaEeOaN6nxgFEQpg" base_Class="_hgO_UGcaEeOaN6nxgFEQpg"/>
+  <XISMobile:XisList xmi:id="_kSLigGcaEeOaN6nxgFEQpg" base_Class="_hQ5i0GcaEeOaN6nxgFEQpg"/>
+</xmi:XMI>

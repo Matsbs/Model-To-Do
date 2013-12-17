@@ -5,11 +5,17 @@
 [import xismobile::pim::uml2::gen::ios::common::utils/]
 [import xismobile::pim::uml2::gen::ios::main::domain2objc/]
 [import xismobile::pim::uml2::gen::ios::main::interaction2objc/]
-[import xismobile::pim::uml2::gen::ios::files::config/]
+[import xismobile::pim::uml2::gen::ios::files::configuration/]
 [import xismobile::pim::uml2::gen::ios::files::generateDBManager/]
 
-[template public generateElement(m : Model)]
+[template public uml2objc(m : Model)]
 [comment @main/]
-[m.domain2objc()/]
-[generateDBManager(m.getAllXisEntities())/]
+[comment][m.generateConfigFiles()/]
+[m.domain2objc()/][/comment]
+[file ('aaaa', false, 'US-ASCII')]
+--[m.getAllXisInteractionSpaces()/]--
+++[m.ownedElement.getStereotypeApplications()/]++
+[/file]
+[m.interaction2objc()/]
+[comment][generateDBManager(m.getAllXisEntities())/][/comment]
 [/template]

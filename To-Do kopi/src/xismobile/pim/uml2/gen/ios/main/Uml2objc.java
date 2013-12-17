@@ -42,7 +42,7 @@ public class Uml2objc extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String[] TEMPLATE_NAMES = { "generateElement" };
+    public static final String[] TEMPLATE_NAMES = { "uml2objc" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).

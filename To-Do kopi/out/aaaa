@@ -1,0 +1,2 @@
+--org.eclipse.uml2.uml.internal.impl.ClassImpl@4942d05b (name: Class1, visibility: <unset>) (isLeaf: false, isAbstract: false, isFinalSpecialization: false) (isActive: false)--
+++org.eclipse.emf.ecore.impl.DynamicEObjectImpl@102b1a22 (eClass: org.eclipse.emf.ecore.impl.EClassImpl@1d007a1a (name: XisInteractionSpace) (instanceClassName: null) (abstract: false, interface: false))++

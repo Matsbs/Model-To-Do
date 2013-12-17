@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module config('http://www.eclipse.org/uml2/4.0.0/UML')]
+[module configuration('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 [import xismobile::pim::uml2::gen::ios::common::xisMobileUtils/]
 
@@ -12,11 +12,11 @@
 
 [template private generateAppDelegate(m : Model)]
 
-[file (m.name + 'AppDelegate.h', false, 'UTF-8')]
+[file (m.name.toUpperFirst() + 'AppDelegate.h', false, 'UTF-8')]
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
 
-@interface To_DoAppDelegate : UIResponder <UIApplicationDelegate>
+@interface [m.name.toUpperFirst()/]AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,retain) UINavigationController *navController;
@@ -24,13 +24,12 @@
 @end
 [/file]
 
-[file (m.name + 'AppDelegate.m', false, 'UTF-8')]
-#import "To_DoAppDelegate.h"
+[file (m.name.toUpperFirst() + 'AppDelegate.m', false, 'UTF-8')]
+#import "[m.name.toUpperFirst()/]AppDelegate.h"
 
-@implementation To_DoAppDelegate
+@implementation [m.name.toUpperFirst()/]AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     self.window = ['['/]['['/]UIWindow alloc[']'/] initWithFrame:['['/]['['/]UIScreen mainScreen[']'/] bounds[']'/][']'/];
     // Override point for customization after application launch.
     MainViewController *mainView = ['['/]['['/]MainViewController alloc[']'/] init[']'/];
@@ -41,7 +40,6 @@
 }
 @end
 [/file]
-
 [/template]
 
 [template private generateMainFile(m : Model)]
@@ -53,7 +51,7 @@
 int main(int argc, char * argv['['/][']'/])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass(['['/][m.name/]AppDelegate class[']'/]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass(['['/][m.name.toUpperFirst()/]AppDelegate class[']'/]));
     }
 }
 [/file]
