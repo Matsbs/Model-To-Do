@@ -5,10 +5,10 @@
 
 @interface Class1ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate, NewTaskViewControllerDelegate>
 
+@property (nonatomic, retain) UISearchBar *listSearchBar;
+@property (nonatomic, retain) UITableView *listTableView;
 
-@property (nonatomic, retain) UISearchBar *searchBarAsdasd;
-@property (nonatomic, retain) UITableView *tableViewAsdasd;
-UILabel *mLabelClass2
+@property (nonatomic, retain) UILabel *labelLabel;
 
 //TODO Domain binding
 @property (nonatomic, retain) NSMutableArray *tasks;

@@ -3,30 +3,85 @@
 [import xismobile::pim::uml2::gen::ios::common::xisMobileUtils/]
 
 [template public initializeWidget(c : Class) post (trim())]
-TO DO!!!! Define all widgets!!! Call alloc init.
-[comment][if (c.isXisLabel())
-mLabel[c.name.toUpperFirst()/] = (XisLabel)findViewById(R.id.label[c.name.toUpperFirst()/]);
-
-[elseif (c.isXisTextBox())]
-mTextBox[c.name.toUpperFirst()/] = (XisTextBox)findViewById(R.id.textBox[c.name.toUpperFirst()/]);
+[if (c.isXisLabel())]
+self.[c.name.toLowerFirst()/]Label = ['['/]['['/]UILabel alloc[']'/] init[']'/];
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]Label.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]Label[']'/];
+[elseif (c.isXisTextBox())] 
+self.[c.name.toLowerFirst()/]TextField = ['['/]['['/]UITextField alloc[']'/] init[']'/];
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]TextField.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TextField[']'/];
 [elseif (c.isXisCheckBox())]
-mCheckBox[c.name.toUpperFirst()/] = (XisCheckBox)findViewById(R.id.checkBox[c.name.toUpperFirst()/]);
+self.[c.name.toLowerFirst()/]CheckBox = ['['/]['['/]UIButton alloc[']'/] init[']'/];
+//Define bool checkBoxSelected and function for changing background image
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]CheckBox.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]CheckBox[']'/];
 [elseif (c.isXisButton())]
-mButton[c.name.toUpperFirst()/] = (XisButton)findViewById(R.id.button[c.name.toUpperFirst()/]);
+self.[c.name.toLowerFirst()/]Button = ['['/]['['/]UIButton alloc[']'/] init[']'/];
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]Button.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]Button[']'/];
 [elseif (c.isXisLink())]
-mLink[c.name.toUpperFirst()/] = (XisLink)findViewById(R.id.link[c.name.toUpperFirst()/]);
+self.[c.name.toLowerFirst()/]URL = ['['/]['['/]NSURL alloc[']'/] init[']'/];
 [elseif (c.isXisImage())]
-mImage[c.name.toUpperFirst()/] = (XisImage)findViewById(R.id.image[c.name.toUpperFirst()/]);
+self.[c.name.toLowerFirst()/]ImageView = ['['/]['['/]UIImageView alloc[']'/] init[']'/];
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]ImageView.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]ImageView[']'/];
 [elseif (c.isXisDatePicker())]
-mDatePicker[c.name.toUpperFirst()/] = (XisDatePicker)findViewById(R.id.datePicker[c.name.toUpperFirst()/]);
+self.[c.name.toLowerFirst()/]DatePicker = ['['/]['['/]UIDatePicker alloc[']'/] init[']'/];
+self.[c.name.toLowerFirst()/]DatePicker.datePickerMode = UIDatePickerModeDate;
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]DatePicker.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]DatePicker[']'/];
 [elseif (c.isXisTimePicker())]
-mTimePicker[c.name.toUpperFirst()/] = (XisTimePicker)findViewById(R.id.timePicker[c.name.toUpperFirst()/]);
-[elseif (c.isXisWebView())]
-mWebView[c.name.toUpperFirst()/] = (XisWebView)findViewById(R.id.web[c.name.toUpperFirst()/]);
+self.[c.name.toLowerFirst()/]TimePicker = ['['/]['['/]UIDatePicker alloc[']'/] init[']'/];
+self.[c.name.toLowerFirst()/]TimePicker.datePickerMode = UIDatePickerModeTime;
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]TimePicker.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TimePicker[']'/];
+[elseif (c.isXisList())]
+	[if (c.xisListIsSearchable())]
+self.[c.name.toLowerFirst()/]SearchBar = ['['/]['['/]UISearchBar alloc[']'/]init[']'/];
+self.[c.name.toLowerFirst()/]SearchBar.delegate = self;
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]SearchBar.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]SearchBar[']'/];
+	[/if]
+self.[c.name.toLowerFirst()/]TableView = ['['/]['['/]UITableView alloc[']'/]init[']'/];
+self.[c.name.toLowerFirst()/]TableView.rowHeight = 50;
+self.[c.name.toLowerFirst()/]TableView.delegate = self;
+self.[c.name.toLowerFirst()/]TableView.dataSource = self;
+self.[c.name.toLowerFirst()/]TableView.scrollEnabled = YES;
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]TableView.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TableView[']'/];
 [elseif (c.isXisMapView())]
-SupportMapFragment mv = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map[c.name.toUpperFirst()/]);
-mMap[c.name.toUpperFirst()/] = mv.getMap();
+self.[c.name.toLowerFirst()/]MapView = ['['/]['['/]MKMapView alloc[']'/]init[']'/];
+self.[c.name.toLowerFirst()/]MapView.mapType = MKMapTypeStandard;
+self.[c.name.toLowerFirst()/]MapView.zoomEnabled = YES;
+self.[c.name.toLowerFirst()/]MapView.scrollEnabled = YES;
+self.[c.name.toLowerFirst()/]MapView.showsUserLocation = YES;
+self.[c.name.toLowerFirst()/]MapView.delegate = self;
+//Set the size and position and add to view. The order in which widgets are added to the
+//view affect the application, as view can be on top of each other.
+//self.[c.name.toLowerFirst()/]MapView.frame = CGRectMake(x-origin, y-origin, width, height);
+//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]MapView[']'/];
+[/if]
 
+[comment]
 if (mMap[c.name.toUpperFirst()/] == null) {
 	Toast.makeText(getApplicationContext(), "Unable to create mMap[c.name.toUpperFirst()/]!", Toast.LENGTH_SHORT).show();
 } else {
@@ -70,5 +125,116 @@ if (mMap[c.name.toUpperFirst()/] == null) {
 	[/if]
 }
 [/if][/comment]
+[/template]
+
+[template public initializeWidgetFunctions(c : Class) post (trim())]
+[if (c.isXisList())]
+//TableView functions
+ (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = ['['/]self.tableView dequeueReusableCellWithIdentifier:CellIdentifier[']'/];
+    if (cell == nil){
+        cell = ['['/]['['/]UITableViewCell alloc[']'/] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier[']'/];
+    }
+    return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+  
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+}
+
+-(void)setEditing:(BOOL)editing animated:(BOOL) animated {
+
+}
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle) editing
+ forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+}
+	[if (c.xisListIsSearchable())]
+//Searchbar functions
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    return YES;
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+
+}
+	[/if]
+[elseif (c.isXisDatePicker())]
+//Datepicker functions
+
+[elseif (c.isXisMapView())]
+//Mapview functions
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay {
+    if (['['/]overlay isKindOfClass:['['/]MKPolyline class[']'/][']'/]) {
+        MKPolylineView* aView = ['['/]['['/]MKPolylineView alloc[']'/]initWithPolyline:(MKPolyline*)overlay[']'/] ;
+        aView.strokeColor = ['['/]['['/]UIColor blueColor[']'/] colorWithAlphaComponent:0.5[']'/];
+        aView.lineWidth = 10;
+        return aView;
+    }
+    return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
+    if(['['/]annotation isKindOfClass:['['/]MKUserLocation class[']'/][']'/])
+        return nil;
+    NSString *annotationIdentifier = @"PinViewAnnotation";
+
+    MKPinAnnotationView *pinView1 = (MKPinAnnotationView *) ['['/]self.mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier[']'/];
+    MKAnnotationView *pinView2 = (MKAnnotationView *) ['['/]self.mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier[']'/];
+    
+    if (!pinView1){
+        pinView1 = ['['/]['['/]MKPinAnnotationView alloc[']'/] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier[']'/];
+        pinView2 = ['['/]['['/]MKAnnotationView alloc[']'/] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier[']'/];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+ 
+}
+[elseif (c.isXisTextBox())]
+//TextField functions
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+
+	Return YES;
+}
+	
+[elseif (c.isXisTimePicker())]
+//Timepicker functions
+		
+[/if]
 [/template]
 

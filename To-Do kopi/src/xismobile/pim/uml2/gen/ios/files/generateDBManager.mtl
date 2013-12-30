@@ -3,10 +3,9 @@
 
 [import xismobile::pim::uml2::gen::ios::common::xisMobileUtils/]
 
-
 [template public generateDBManager(cl : OrderedSet(Class))]
 
-[file ('dbManager.h', false, 'UTF-8')]
+[file ('DBManager.h', false, 'UTF-8')]
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 [for (c : Class | cl)]
@@ -32,7 +31,7 @@
 @end
 [/file]
 
-[file ('dbManager.m', false, 'UTF-8')]
+[file ('DBManager.m', false, 'UTF-8')]
 //
 //  DBManager.m
 //  To-Do
@@ -308,6 +307,8 @@
 	DOUBLE	
 	[elseif (type = 'String')]
 	TEXT
+	[else]
+	TEXT	
 	[/if]
 [/let]
 [/template]
@@ -319,6 +320,8 @@
 	[elseif (type = 'Double')]
 	\"%f\"	
 	[elseif (type = 'String')]
+	\"%@\"
+	[else]
 	\"%@\"
 	[/if]
 [/let]

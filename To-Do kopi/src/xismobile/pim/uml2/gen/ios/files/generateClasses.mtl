@@ -44,7 +44,16 @@
 	@property double 
 	[elseif (type = 'String')]
 	@property (nonatomic, retain) NSString *
-	[comment TODO Add other types /]
+	[elseif (type = 'Boolean')]
+	@property bool
+	[elseif (type = 'Date')]
+	@property (nonatomic, retain) NSDate *
+	[elseif (type = 'Time')]
+	@property (nonatomic, retain) NSString *
+	[elseif (type = 'Image')]
+	@property (nonatomic, retain) UIImageView *
+	[elseif (type = 'URL')]
+	@property (nonatomic, retain) NSURL *
 	[/if]
 [/let]
 	

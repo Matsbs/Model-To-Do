@@ -5,8 +5,8 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_s5nZwGcXEeOaN6nxgFEQpg" name="Class1">
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_t-ZQgGcXEeOaN6nxgFEQpg" name="Class2"/>
-      <nestedClassifier xmi:type="uml:Class" xmi:id="_tZEgcGcYEeOaN6nxgFEQpg" name="asdasd"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_t-ZQgGcXEeOaN6nxgFEQpg" name="Label"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_tZEgcGcYEeOaN6nxgFEQpg" name="List"/>
       <nestedClassifier xmi:type="uml:Class" xmi:id="_Ga_SgGcpEeOcBvtofUWfEA" name="MyOptions">
         <nestedClassifier xmi:type="uml:Class" xmi:id="_heyQAGcpEeOcBvtofUWfEA" name="Item1">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_M3fmcGcqEeOcBvtofUWfEA" name="Operation1"/>
@@ -16,6 +16,15 @@
         </nestedClassifier>
       </nestedClassifier>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FTqQwHBuEeOjaqZHiDwttw" name="Class2">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_W8SUUHBuEeOjaqZHiDwttw" name="Name" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XxgsIHBuEeOjaqZHiDwttw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XxhTMHBuEeOjaqZHiDwttw" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Xxh6QHBuEeOjaqZHiDwttw">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_MzgRkGcaEeOaN6nxgFEQpg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Mzts8GcaEeOaN6nxgFEQpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="model.profile.uml#_SXapEVhTEeOjBoMcdovZrg"/>
@@ -23,12 +32,14 @@
       <appliedProfile xmi:type="uml:Profile" href="model.profile.uml#_EUKFkB9vEeOZ6al_I843SA"/>
     </profileApplication>
   </uml:Model>
-  <XISMobile:XisInteractionSpace xmi:id="_OCXRYGcaEeOaN6nxgFEQpg" base_Class="_s5nZwGcXEeOaN6nxgFEQpg" title="some titlesaaaaaaa" height="300"/>
-  <XISMobile:XisLabel xmi:id="_PCQBEGcaEeOaN6nxgFEQpg" base_Class="_t-ZQgGcXEeOaN6nxgFEQpg"/>
-  <XISMobile:XisList xmi:id="_R00PUGcaEeOaN6nxgFEQpg" base_Class="_tZEgcGcYEeOaN6nxgFEQpg" searchBy="asdaas"/>
+  <XISMobile:XisInteractionSpace xmi:id="_OCXRYGcaEeOaN6nxgFEQpg" isMainScreen="true" base_Class="_s5nZwGcXEeOaN6nxgFEQpg" title="mainscreenname" height="300"/>
+  <XISMobile:XisLabel xmi:id="_PCQBEGcaEeOaN6nxgFEQpg" name="labelname" base_Class="_t-ZQgGcXEeOaN6nxgFEQpg"/>
+  <XISMobile:XisList xmi:id="_R00PUGcaEeOaN6nxgFEQpg" name="listname" base_Class="_tZEgcGcYEeOaN6nxgFEQpg" searchBy="searchbyname"/>
   <XISMobile:XisMenu xmi:id="_LPuM0GcpEeOcBvtofUWfEA" base_Class="_Ga_SgGcpEeOcBvtofUWfEA"/>
   <XISMobile:XisMenuItem xmi:id="_kJBBoGcpEeOcBvtofUWfEA" base_Class="_heyQAGcpEeOcBvtofUWfEA"/>
   <XISMobile:XisMenuItem xmi:id="_mXZkwGcpEeOcBvtofUWfEA" base_Class="_iWQqkGcpEeOcBvtofUWfEA"/>
-  <XISMobile:XisAction xmi:id="_OSzG0GcqEeOcBvtofUWfEA" base_Operation="_M3fmcGcqEeOcBvtofUWfEA"/>
+  <XISMobile:XisAction xmi:id="_OSzG0GcqEeOcBvtofUWfEA" type="Cancel" base_Operation="_M3fmcGcqEeOcBvtofUWfEA"/>
   <XISMobile:XisAction xmi:id="_Tkx90GcqEeOcBvtofUWfEA" base_Operation="_Rp2iMGcqEeOcBvtofUWfEA"/>
+  <XISMobile:XisEntity xmi:id="_I-BCoHBuEeOjaqZHiDwttw" persistent="false" base_Class="_FTqQwHBuEeOjaqZHiDwttw"/>
+  <XISMobile:XisEntityAttribute xmi:id="_5YN9AHBuEeOjaqZHiDwttw" name="name" type="String" base_Property="_W8SUUHBuEeOjaqZHiDwttw"/>
 </xmi:XMI>

@@ -19,7 +19,7 @@
 [if (dbNeeded)]
 #import "DBManager.h"
 [elseif (managerNeeded)]
-//import manager.h
+#import "Manager.h"
 [/if]
 
 @interface [c.name.toUpperFirst()/]ViewController : UIViewController <[c.writeTableView()/], NewTaskViewControllerDelegate>
@@ -35,7 +35,7 @@
 [if (dbNeeded)]
 @property (nonatomic, retain) DBManager *dbManager;
 [elseif (managerNeeded)]
-//@property for Manager;
+@property (nonatomic, retain) Manager *manager;
 [/if]
 [/let]
 [/let]
@@ -66,33 +66,27 @@
 	 self.dbManager = ['['/]['['/]DBManager alloc[']'/]init[']'/];
     ['['/]self.dbManager initDatabase[']'/];
 [elseif (managerNeeded)]
- // TODO!!
+     self.manager = ['['/]['['/]Manager alloc[']'/]init[']'/];
 [/if]
 [/let]
 [/let]
-
     self.tasks = ['['/]self.dbManager getAllTasks[']'/];
 [if (c.hasTitle())]
 	self.title = @"[c.getTitle()/]";
 [/if]
 
 [for (widget : Class | c.getXisWidgets())]
-	[widget.initializeWidget()/]
+    [widget.initializeWidget()/]
 [/for]
-	//TODO change!
-    self.tableView = ['['/]['['/]UITableView alloc[']'/] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) style:UITableViewStylePlain[']'/];
-    self.tableView.rowHeight = 50;
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    ['['/]self.view addSubview:self.tableView[']'/];
+
 [let m : Class = c.getOptionsMenu()]
-	NSMutableArray *barButtons = ['['/]['['/]NSMutableArray alloc[']'/]init[']'/];
+    NSMutableArray *barButtons = ['['/]['['/]NSMutableArray alloc[']'/]init[']'/];
 [for (item : Class | m.getXisMenuItems())]
-	UIBarButtonItem *[item.name.toLowerFirst()/]Button = ['['/]['['/]UIBarButtonItem alloc[']'/] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector([item.getXisAction().name.toLowerFirst()/]:)];    
+    UIBarButtonItem *[item.name.toLowerFirst()/]Button = ['['/]['['/]UIBarButtonItem alloc[']'/] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector([item.getXisAction().name.toLowerFirst()/]:)];    
     ['['/]barButtons addObject:[item.name.toLowerFirst()/]Button[']'/];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 [/for]
-	self.navigationItem.rightBarButtonItems = barButtons;
+    self.navigationItem.rightBarButtonItems = barButtons;
 [/let]
 }
 
@@ -133,14 +127,40 @@
 [if (c.hasOptionsMenu())]
 [for (item : Class | c.getOptionsMenu().getXisMenuItems())]
 - (IBAction)[item.getXisAction().name.toLowerFirst()/]:(id)sender {
-    Check for all actions!! TODO --> template, webservice, cancel, all actions
-	NewTaskViewController *newTaskView = ['['/]['['/]NewTaskViewController alloc[']'/] init[']'/];
-    newTaskView.delegate = self;
-    ['['/]self.navigationController pushViewController:newTaskView animated:YES[']'/];
+	[if (item.getXisAction().isCancelAction())]
+    //Cancel operation, navigate to mainscreen
+    ['['/]self.navigationController popToRootViewControllerAnimated:YES[']'/];
+	[elseif (item.getXisAction().isCreateAction())]
+    //Create operation
+	[elseif (item.getXisAction().isCustomAction())]
+    //Custom operation
+	[elseif (item.getXisAction().isDeleteteAction())]
+    //Delete operation
+	[elseif (item.getXisAction().isDeleteteAllAction())]
+    //Delete all operation
+	[elseif (item.getXisAction().isOKAction())]
+    //OK operation
+	[elseif (item.getXisAction().isReadAction())]
+    //Read operation
+	[elseif (item.getXisAction().isUpdateAction())]
+    //Update operation
+    //Get data from database and reload table data
+	[elseif (item.getXisAction().isWebServiceAction())]
+    //Webservice operation
+['['/]['['/]UIApplication sharedApplication[']'/] openURL:self.[c.name.toLowerFirst()/]URL [']'/];
+	[elseif (item.getXisAction().isZoomInAction())]
+    //Zoom in operation		
+	[elseif (item.getXisAction().isZoomOutAction())]
+    //Zoom out operation		
+	[/if]
 	
+	[comment navigate action, alert action not defined? /]
 	[comment]NSString *alertTitle = [[NSString alloc]initWithFormat:@"Are you sure you want to delete all tasks?"];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertTitle message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Delete Tasks", nil ];
     [alert show];[/comment]
+    NewTaskViewController *newTaskView = ['['/]['['/]NewTaskViewController alloc[']'/] init[']'/];
+    newTaskView.delegate = self;
+    ['['/]self.navigationController pushViewController:newTaskView animated:YES[']'/];	
 }
 [/for]
 [/if]
@@ -243,6 +263,11 @@
         [self.navigationController pushViewController:newTaskView animated:YES];
     }
 }[/comment]
+
+[for (widget : Class | c.getXisWidgets())]
+[widget.initializeWidgetFunctions()/]
+[/for]
+
 [/file]
 [/template]
 
@@ -258,33 +283,29 @@ UITableViewDataSource, UITableViewDelegate
 
 [template public writeWidgetTypeAndName(c : Class) post (trim())]
 [if (c.isXisLabel())]
-UILabel *mLabel[c.name.toUpperFirst()/]
+@property (nonatomic, retain) UILabel *[c.name.toLowerFirst()/]Label;
 [comment TODO, define tableview, IBOulet for textbox osv, property!!/]
 [elseif (c.isXisTextBox())]
-XisTextBox mTextBox[c.name.toUpperFirst()/]
+@property (nonatomic, retain) IBOutlet UITextField *[c.name.toLowerFirst()/]TextField;
 [elseif (c.isXisCheckBox())]
-XisCheckBox mCheckBox[c.name.toUpperFirst()/]
+@property (nonatomic, retain) UIButton *[c.name.toLowerFirst()/]CheckBox;
 [elseif (c.isXisButton())]
-XisButton mButton[c.name.toUpperFirst()/]
+@property (nonatomic, retain) UIButton *[c.name.toLowerFirst()/]Button;
 [elseif (c.isXisLink())]
-XisLink mLink[c.name.toUpperFirst()/]
+@property (nonatomic, retain) NSURL *[c.name.toLowerFirst()/]URL;
 [elseif (c.isXisImage())]
-XisImage mImage[c.name.toUpperFirst()/]
+@property (nonatomic, retain) UIImageView *[c.name.toLowerFirst()/]ImageView;
 [elseif (c.isXisDatePicker())]
-XisDatePicker mDatePicker[c.name.toUpperFirst()/]
+@property (nonatomic, retain) IBOutlet UIDatePicker *[c.name.toLowerFirst()/]DatePicker;
 [elseif (c.isXisTimePicker())]
-XisTimePicker mTimePicker[c.name.toUpperFirst()/]
-[elseif (c.isXisWebView())]
-XisWebView mWeb[c.name.toUpperFirst()/]
+@property (nonatomic, retain) IBOutlet UIDatePicker *[c.name.toLowerFirst()/]TimePicker;
 [elseif (c.isXisMapView())]
-XisMapView mMap[c.name.toUpperFirst()/]
+@property (nonatomic, retain) MKMapView *[c.name.toLowerFirst()/]MapView;
 [elseif (c.isXisList())]
-[if (c.xisListIsSearchable())]
-@property (nonatomic, retain) UISearchBar *searchBar[c.name.toUpperFirst()/];
-[/if]
-@property (nonatomic, retain) UITableView *tableView[c.name.toUpperFirst()/];
-[elseif (c.isXisDropdown())]
-XisDropdown mDropdown[c.name.toUpperFirst()/]
+	[if (c.xisListIsSearchable())]
+@property (nonatomic, retain) UISearchBar *[c.name.toLowerFirst()/]SearchBar;
+	[/if]
+@property (nonatomic, retain) UITableView *[c.name.toLowerFirst()/]TableView;
 [/if]
 [/template]
 

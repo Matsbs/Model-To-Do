@@ -14,7 +14,7 @@
 
 [file (m.name.toUpperFirst() + 'AppDelegate.h', false, 'UTF-8')]
 #import <UIKit/UIKit.h>
-#import "MainViewController.h"
+#import "[m.getMainView()/]ViewController.h"
 
 @interface [m.name.toUpperFirst()/]AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -32,7 +32,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     self.window = ['['/]['['/]UIWindow alloc[']'/] initWithFrame:['['/]['['/]UIScreen mainScreen[']'/] bounds[']'/][']'/];
     // Override point for customization after application launch.
-    MainViewController *mainView = ['['/]['['/]MainViewController alloc[']'/] init[']'/];
+    [m.getMainView()/]ViewController *mainView = ['['/]['['/][m.getMainView()/]ViewController alloc[']'/] init[']'/];
     self.navController = ['['/]['['/]UINavigationController alloc[']'/]initWithRootViewController:mainView[']'/];
     ['['/]self.window setRootViewController:self.navController[']'/];
     ['['/]self.window makeKeyAndVisible[']'/];

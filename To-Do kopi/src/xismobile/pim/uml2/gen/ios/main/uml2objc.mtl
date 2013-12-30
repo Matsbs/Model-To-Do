@@ -10,12 +10,9 @@
 
 [template public uml2objc(m : Model)]
 [comment @main/]
-[comment][m.generateConfigFiles()/]
-[m.domain2objc()/][/comment]
-[file ('aaaa', false, 'US-ASCII')]
---[m.getAllXisInteractionSpaces()/]--
-++[m.ownedElement.getStereotypeApplications()/]++
-[/file]
+
+[m.generateConfigFiles()/]
+[m.domain2objc()/]
 [m.interaction2objc()/]
-[comment][generateDBManager(m.getAllXisEntities())/][/comment]
+
 [/template]
