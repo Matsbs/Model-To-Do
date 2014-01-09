@@ -15,14 +15,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.acceleo.common.IAcceleoConstants;
 import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
 import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy;
 import org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator;
+import org.eclipse.acceleo.model.mtl.resource.EMtlBinaryResourceFactoryImpl;
+import org.eclipse.acceleo.model.mtl.resource.EMtlResourceFactoryImpl;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -43,6 +48,8 @@ public class Uml2objc extends AbstractAcceleoGenerator {
      * @generated
      */
     public static final String[] TEMPLATE_NAMES = { "uml2objc" };
+
+    public static String jarPath;
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).
@@ -120,11 +127,12 @@ public class Uml2objc extends AbstractAcceleoGenerator {
      */
     public static void main(String[] args) {
         try {
-            if (args.length < 2) {
-                System.out.println("Arguments not valid : {model, folder}.");
+            if (args.length < 3) {
+                System.out.println("Arguments not valid : {jarPath, model, folder}.");
             } else {
-                URI modelURI = URI.createFileURI(args[0]);
-                File folder = new File(args[1]);
+            	jarPath = args[0];
+                URI modelURI = URI.createFileURI(args[1]);
+                File folder = new File(args[2]);
                 
                 List<String> arguments = new ArrayList<String>();
                 
@@ -153,7 +161,7 @@ public class Uml2objc extends AbstractAcceleoGenerator {
                  * (Help -> Help Contents).
                  */
                  
-                for (int i = 2; i < args.length; i++) {
+                for (int i = 3; i < args.length; i++) {
                     generator.addPropertiesFile(args[i]);
                 }
                 
@@ -382,7 +390,7 @@ public class Uml2objc extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
     @Override
     public void registerResourceFactories(ResourceSet resourceSet) {
@@ -403,7 +411,23 @@ public class Uml2objc extends AbstractAcceleoGenerator {
          * To learn more about the registration of Resource Factories, have a look at the Acceleo documentation (Help -> Help Contents). 
          */ 
         
-        // resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
+         resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
+         resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
+         resourceSet.getResourceFactoryRegistry().getContentTypeToFactoryMap().put(IAcceleoConstants.BINARY_CONTENT_TYPE, new EMtlBinaryResourceFactoryImpl());
+         resourceSet.getResourceFactoryRegistry().getContentTypeToFactoryMap().put(IAcceleoConstants.XMI_CONTENT_TYPE, new EMtlResourceFactoryImpl());
+         resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("emtl", new EMtlResourceFactoryImpl());
+    }
+    
+    protected URI createTemplateURI(String entry) {
+        if (entry.contains("rsrc:")) {
+                    entry = entry.replace("rsrc:", "");
+                    entry = "jar:file:/" + jarPath + "/iOSGenerator.jar!/" + entry;
+            }
+        
+            if (entry.startsWith("file:") || entry.startsWith("jar:")) { //$NON-NLS-1$ //$NON-NLS-2$ 
+                    return URI.createURI(URI.decode(entry));
+            }
+            return URI.createFileURI(URI.decode(entry));
     }
     
 }

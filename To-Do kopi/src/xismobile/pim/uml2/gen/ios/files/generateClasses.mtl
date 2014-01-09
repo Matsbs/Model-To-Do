@@ -7,6 +7,7 @@
 [comment generate class.h file/]
 [file (c.name.toUpperFirst() + '.h', false, 'UTF-8')]
 #import <Foundation/Foundation.h>
+[c.getAssosiations()/]
 
 @interface [c.name.toUpperFirst()/] : NSObject
 
@@ -32,7 +33,7 @@
 @property int [c.name.toLowerCase()/]Id;
 [/if]
 [for (p : Property | c.getXisEntityAttributes())]
-[p.getType()/] [p.name/];
+[p.getType()/][p.name/];
 [/for]
 [/template]
 
@@ -59,6 +60,41 @@
 	
 [/template]
 
+[template public getAssosiations(c : Class) post( trim())]
+[for (a : Association | c.getXisEntityAssociations())]
+[let first : Property = a.memberEnd->at(1)]
+[let second : Property = a.memberEnd->at(2)]
+[if (not first.isNavigable() and not second.isNavigable() or
+first.isNavigable() and second.isNavigable())]
+	[if (a.endType->at(1).name = c.name)]
+[a.processAttr(2)/]
+	[else]
+[a.processAttr(1)/]
+	[/if]
+[elseif (first.isNavigable())]
+	[if (a.endType->at(1).name <> c.name)]
+[a.processAttr(1)/]
+	[/if]	
+[elseif (second.isNavigable())]
+	[if (a.endType->at(2).name <> c.name)]
+[a.processAttr(2)/]
+	[/if]
+[/if]
+[/let]
+[/let]
+[/for]
+[/template]
+
+[template private processAttr(a : Association, idx : Integer) post (trim())]
+[let p : Property = a.memberEnd->at(idx)]
+	[if (p.upperBound() = 1)]
+#import "[a.endType->at(idx).name.toUpperFirst()/].h"
+	[elseif (p.upperBound() = -1)]
+[comment 1 to many relations /]
+#import "[a.endType->at(idx).name.toUpperFirst()/].h"
+	[/if]
+[/let]
+[/template]
 
 
 

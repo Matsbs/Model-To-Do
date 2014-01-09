@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
 
-#import "ModelAppDelegate.h"
+#import "MyApplicationAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([ModelAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([MyApplicationAppDelegate class]));
     }
 }

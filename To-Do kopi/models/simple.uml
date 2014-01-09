@@ -17,10 +17,47 @@
       </nestedClassifier>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_FTqQwHBuEeOjaqZHiDwttw" name="Class2">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_W8SUUHBuEeOjaqZHiDwttw" name="Name" visibility="public">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_W8SUUHBuEeOjaqZHiDwttw" name="NameUML" visibility="public">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XxgsIHBuEeOjaqZHiDwttw" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XxhTMHBuEeOjaqZHiDwttw" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_Xxh6QHBuEeOjaqZHiDwttw">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_d59wYHd6EeOzxupPc_FYow" name="Attribute1" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eGUxYHd6EeOzxupPc_FYow" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eGVYcHd6EeOzxupPc_FYow" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_eGWmkHd6EeOzxupPc_FYow">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hhQAIHd6EeOzxupPc_FYow" name="Attribute2" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hzY5AHd6EeOzxupPc_FYow" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hzZgEHd6EeOzxupPc_FYow" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_hzauMHd6EeOzxupPc_FYow">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_vH-J8Hd5EeOzxupPc_FYow" name="Class3">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_j-oBgHd6EeOzxupPc_FYow" name="Attribute1" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kJWDwHd6EeOzxupPc_FYow" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kJWDwXd6EeOzxupPc_FYow" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_kJXR4Hd6EeOzxupPc_FYow">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kRujsHd6EeOzxupPc_FYow" name="Attribute2" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_khzAAHd6EeOzxupPc_FYow" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_khznEHd6EeOzxupPc_FYow" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_kh01MHd6EeOzxupPc_FYow">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kshpUHd6EeOzxupPc_FYow" name="Attribute3" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_k0_o0Hd6EeOzxupPc_FYow" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k1AP4Hd6EeOzxupPc_FYow" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_k1BeAHd6EeOzxupPc_FYow">
           <value xsi:nil="true"/>
         </defaultValue>
       </ownedAttribute>
@@ -33,13 +70,19 @@
     </profileApplication>
   </uml:Model>
   <XISMobile:XisInteractionSpace xmi:id="_OCXRYGcaEeOaN6nxgFEQpg" isMainScreen="true" base_Class="_s5nZwGcXEeOaN6nxgFEQpg" title="mainscreenname" height="300"/>
-  <XISMobile:XisLabel xmi:id="_PCQBEGcaEeOaN6nxgFEQpg" name="labelname" base_Class="_t-ZQgGcXEeOaN6nxgFEQpg"/>
+  <XISMobile:XisLabel xmi:id="_PCQBEGcaEeOaN6nxgFEQpg" name="labelname" posX="10000" posY="20" width="200" height="500" base_Class="_t-ZQgGcXEeOaN6nxgFEQpg"/>
   <XISMobile:XisList xmi:id="_R00PUGcaEeOaN6nxgFEQpg" name="listname" base_Class="_tZEgcGcYEeOaN6nxgFEQpg" searchBy="searchbyname"/>
   <XISMobile:XisMenu xmi:id="_LPuM0GcpEeOcBvtofUWfEA" base_Class="_Ga_SgGcpEeOcBvtofUWfEA"/>
   <XISMobile:XisMenuItem xmi:id="_kJBBoGcpEeOcBvtofUWfEA" base_Class="_heyQAGcpEeOcBvtofUWfEA"/>
   <XISMobile:XisMenuItem xmi:id="_mXZkwGcpEeOcBvtofUWfEA" base_Class="_iWQqkGcpEeOcBvtofUWfEA"/>
-  <XISMobile:XisAction xmi:id="_OSzG0GcqEeOcBvtofUWfEA" type="Cancel" base_Operation="_M3fmcGcqEeOcBvtofUWfEA"/>
+  <XISMobile:XisAction xmi:id="_OSzG0GcqEeOcBvtofUWfEA" type="Navigate" navigation="nextScreen" base_Operation="_M3fmcGcqEeOcBvtofUWfEA"/>
   <XISMobile:XisAction xmi:id="_Tkx90GcqEeOcBvtofUWfEA" base_Operation="_Rp2iMGcqEeOcBvtofUWfEA"/>
-  <XISMobile:XisEntity xmi:id="_I-BCoHBuEeOjaqZHiDwttw" persistent="false" base_Class="_FTqQwHBuEeOjaqZHiDwttw"/>
-  <XISMobile:XisEntityAttribute xmi:id="_5YN9AHBuEeOjaqZHiDwttw" name="name" type="String" base_Property="_W8SUUHBuEeOjaqZHiDwttw"/>
+  <XISMobile:XisEntity xmi:id="_I-BCoHBuEeOjaqZHiDwttw" base_Class="_FTqQwHBuEeOjaqZHiDwttw"/>
+  <XISMobile:XisEntityAttribute xmi:id="_5YN9AHBuEeOjaqZHiDwttw" name="helloworld" type="String" base_Property="_W8SUUHBuEeOjaqZHiDwttw"/>
+  <XISMobile:XisEntity xmi:id="_wM9cEHd5EeOzxupPc_FYow" base_Class="_vH-J8Hd5EeOzxupPc_FYow"/>
+  <XISMobile:XisEntityAttribute xmi:id="_gT2Y4Hd6EeOzxupPc_FYow" base_Property="_d59wYHd6EeOzxupPc_FYow"/>
+  <XISMobile:XisEntityAttribute xmi:id="_iRZqsHd6EeOzxupPc_FYow" base_Property="_hhQAIHd6EeOzxupPc_FYow"/>
+  <XISMobile:XisEntityAttribute xmi:id="_leFCEHd6EeOzxupPc_FYow" base_Property="_j-oBgHd6EeOzxupPc_FYow"/>
+  <XISMobile:XisEntityAttribute xmi:id="_mN2SIHd6EeOzxupPc_FYow" base_Property="_kRujsHd6EeOzxupPc_FYow"/>
+  <XISMobile:XisEntityAttribute xmi:id="_m_wQMHd6EeOzxupPc_FYow" base_Property="_kshpUHd6EeOzxupPc_FYow"/>
 </xmi:XMI>

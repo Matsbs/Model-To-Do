@@ -197,7 +197,7 @@
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oUQjwDsbEeO8mdWoeTb3-A">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oU8gQDsbEeO8mdWoeTb3-A" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="model.profile.uml#_phqbYDDxEeOAIuHwzcL-qg"/>
+        <references xmi:type="ecore:EPackage" href="model.profile.uml#_SXapEVhTEeOjBoMcdovZrg"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="model.profile.uml#_EUKFkB9vEeOZ6al_I843SA"/>
     </profileApplication>

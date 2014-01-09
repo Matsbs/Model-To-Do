@@ -2,7 +2,6 @@
 [module interaction2objc('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 [import xismobile::pim::uml2::gen::ios::common::xisMobileUtils/]
-[import xismobile::pim::uml2::gen::ios::files::layout/]
 [import xismobile::pim::uml2::gen::ios::files::generateViewController/]
 [import xismobile::pim::uml2::gen::ios::services::services/]
 

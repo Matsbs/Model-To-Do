@@ -45,6 +45,7 @@
 
 [query public getXisEntityAttributes(c : Class) : Set(Property) =
 	c.ownedAttribute->select(p : Property | p.isXisEntityAttribute())
+	->sortedBy(p : Property | p.eContainer().eContents()->indexOf(p))
 /]
 
 [query public getXisEntityAttribute(p : Property) : Stereotype =
@@ -247,7 +248,7 @@
 	then false
 	else items->select(i : Class | i.hasXisAction() and
 		(let op : Operation = i.getXisAction() in op.isCreateAction() or op.isReadAction()
-		or op.isUpdateAction() or op.isDeleteteAction() or op.isOKAction()))
+		or op.isUpdateAction() or op.isDeleteteAction() or op.isOKAction()))->size() > 0
 	endif
 /]
 
@@ -277,6 +278,10 @@
 
 [query public isXisListItem(c : Class) : Boolean =
 	not c.getXisListItem().oclIsUndefined()
+/]
+
+[query public itemIsSelectable(c : Class) : Boolean =
+	c.getValue(c.getXisListItem(), 'selectable')
 /]
 
 [query public getXisListGroups(c : Class) : OrderedSet(Class) = 
@@ -401,6 +406,12 @@
 	getEnumValue(o.getValue(
 		o.getXisAction(), 'type')
 	) = 'WebService'
+/]
+
+[query public isNavigateAction(o : Operation) : Boolean = 
+	getEnumValue(o.getValue(
+		o.getXisAction(), 'type')
+	) = 'Navigate'
 /]
 
 [query public isCustomAction(o : Operation) : Boolean = 
@@ -814,6 +825,80 @@
 	not c.getXisLocationProvider().oclIsUndefined()
 /]
 
+[query public getXisContactsProvider(c : Class) : Stereotype = 
+	c.getAppliedStereotype('XIS-Mobile::XisContactsProvider')
+/]
+
+[query public isXisContactsProvider(c : Class) : Boolean = 
+	not c.getXisContactsProvider().oclIsUndefined()
+/]
+
+[query public getXisCalendarProvider(c : Class) : Stereotype = 
+	c.getAppliedStereotype('XIS-Mobile::XisCalendarProvider')
+/]
+
+[query public isXisCalendarProvider(c : Class) : Boolean = 
+	not c.getXisCalendarProvider().oclIsUndefined()
+/]
+
+[query public getAllXisServices(m : Model) : OrderedSet(Interface) =
+	m.allOwnedElements()->selectByType(Interface)->select(s : Interface | s.isXisService())
+/]
+
+[query public getXisService(i : Interface) : Stereotype = 
+	i.getAppliedStereotype('XIS-Mobile::XisService')
+/]
+
+[query public isXisService(i : Interface) : Boolean = 
+	not i.getXisService().oclIsUndefined()
+/]
+
+[query public getXisInternalService(i : Interface) : Stereotype = 
+	i.getAppliedStereotype('XIS-Mobile::XisInternalService')
+/]
+
+[query public isXisInternalService(i : Interface) : Boolean = 
+	not i.getXisInternalService().oclIsUndefined()
+/]
+
+[query public getXisRemoteService(i : Interface) : Stereotype = 
+	i.getAppliedStereotype('XIS-Mobile::XisRemoteService')
+/]
+
+[query public isXisRemoteService(i : Interface) : Boolean = 
+	not i.getXisRemoteService().oclIsUndefined()
+/]
+
+[query public getRemoteServiceUrl(i : Interface) : String =
+	i.getRelationships()->selectByType(InterfaceRealization)
+		.source.oclAsType(Class).getXisServerAddress()
+	+ '/' + i.name
+/]
+
+[query public getXisServer(c : Class) : Stereotype = 
+	c.getAppliedStereotype('XIS-Mobile::XisServer')
+/]
+
+[query public isXisServer(c : Class) : Boolean = 
+	not c.getXisServer().oclIsUndefined()
+/]
+
+[query public getXisServerAddress(c : Class) : String =
+	c.getValue(c.getXisServer(), 'address')
+/]
+
+[query public getXisServiceMethods(i: Interface) : OrderedSet(Operation) = 
+	i.ownedOperation->select(o : Operation | o.isXisServiceMethod())
+/]
+
+[query public getXisServiceMethod(o : Operation) : Stereotype =
+	o.getAppliedStereotype('XIS-Mobile::XisServiceMethod')
+/]
+
+[query public isXisServiceMethod(o : Operation) : Boolean =
+	not o.getXisServiceMethod().oclIsUndefined()
+/]
+
 [**
  * Checks if the application needs Internet to work properly.
  * Searches for WebService actions, MapView or WebView widgets. 
@@ -822,12 +907,22 @@
 	let cls : Collection(Class) = m.allOwnedElements()->selectByType(Class),
 	acts : Collection(Operation) = m.allOwnedElements()->selectByType(Operation)  in
 	cls->select(c : Class | c.isXisMapView() or c.isXisWebView())->size() > 0 or
-	acts->select(o : Operation | o.isWebServiceAction())->size() > 0
+	acts->select(o : Operation | o.isXisAction() and o.isWebServiceAction())->size() > 0
 /]
 
 [query public needsLocationPermissions(m : Model) : Boolean = 
 	m.allOwnedElements()->selectByType(Class)->select(
 		c : Class | c.isXisLocationProvider())->size() > 0
+/]
+
+[query public needsContactsPermissions(m : Model) : Boolean = 
+	m.allOwnedElements()->selectByType(Class)->select(
+		c : Class | c.isXisContactsProvider())->size() > 0
+/]
+
+[query public needsCalendarPermissions(m : Model) : Boolean = 
+	m.allOwnedElements()->selectByType(Class)->select(
+		c : Class | c.isXisCalendarProvider())->size() > 0
 /]
 
 [query public getEnumValue(el : OclAny) : OclAny =

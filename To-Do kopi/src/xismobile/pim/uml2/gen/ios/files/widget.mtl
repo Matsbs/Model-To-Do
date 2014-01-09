@@ -5,69 +5,53 @@
 [template public initializeWidget(c : Class) post (trim())]
 [if (c.isXisLabel())]
 self.[c.name.toLowerFirst()/]Label = ['['/]['['/]UILabel alloc[']'/] init[']'/];
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]Label.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]Label[']'/];
+self.[c.name.toLowerFirst()/]Label.frame = CGRectMake([c.getValue(c.getXisLabel(),'posX')/], [c.getValue(c.getXisLabel(),'posY')/], [c.getValue(c.getXisLabel(),'width')/], [c.getValue(c.getXisLabel(),'height')/]);
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]Label[']'/];
 [elseif (c.isXisTextBox())] 
 self.[c.name.toLowerFirst()/]TextField = ['['/]['['/]UITextField alloc[']'/] init[']'/];
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]TextField.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TextField[']'/];
+self.[c.name.toLowerFirst()/]TextField.frame = CGRectMake([c.getValue(c.getXisTextBox(),'posX')/], [c.getValue(c.getXisTextBox(),'posY')/], [c.getValue(c.getXisTextBox(),'width')/], [c.getValue(c.getXisTextBox(),'height')/]);
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TextField[']'/];
 [elseif (c.isXisCheckBox())]
 self.[c.name.toLowerFirst()/]CheckBox = ['['/]['['/]UIButton alloc[']'/] init[']'/];
+self.[c.name.toLowerFirst()/]CheckBox.frame = CGRectMake([c.getValue(c.getXisCheckBox(),'posX')/], [c.getValue(c.getXisCheckBox(),'posY')/], [c.getValue(c.getXisCheckBox(),'width')/], [c.getValue(c.getXisCheckBox(),'height')/]);
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]CheckBox[']'/];
 //Define bool checkBoxSelected and function for changing background image
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]CheckBox.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]CheckBox[']'/];
 [elseif (c.isXisButton())]
 self.[c.name.toLowerFirst()/]Button = ['['/]['['/]UIButton alloc[']'/] init[']'/];
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]Button.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]Button[']'/];
+self.[c.name.toLowerFirst()/]Button.frame = CGRectMake([c.getValue(c.getXisButton(),'posX')/], [c.getValue(c.getXisButton(),'posY')/], [c.getValue(c.getXisButton(),'width')/], [c.getValue(c.getXisButton(),'height')/]);
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]Button[']'/];
 [elseif (c.isXisLink())]
 self.[c.name.toLowerFirst()/]URL = ['['/]['['/]NSURL alloc[']'/] init[']'/];
 [elseif (c.isXisImage())]
 self.[c.name.toLowerFirst()/]ImageView = ['['/]['['/]UIImageView alloc[']'/] init[']'/];
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]ImageView.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]ImageView[']'/];
+self.[c.name.toLowerFirst()/]ImageView.frame = CGRectMake([c.getValue(c.getXisImage(),'posX')/], [c.getValue(c.getXisImage(),'posY')/], [c.getValue(c.getXisImage(),'width')/], [c.getValue(c.getXisImage(),'height')/]);
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]ImageView[']'/];
 [elseif (c.isXisDatePicker())]
 self.[c.name.toLowerFirst()/]DatePicker = ['['/]['['/]UIDatePicker alloc[']'/] init[']'/];
 self.[c.name.toLowerFirst()/]DatePicker.datePickerMode = UIDatePickerModeDate;
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]DatePicker.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]DatePicker[']'/];
+self.[c.name.toLowerFirst()/]DatePicker.frame = CGRectMake([c.getValue(c.getXisDatePicker(),'posX')/], [c.getValue(c.getXisDatePicker(),'posY')/], [c.getValue(c.getXisDatePicker(),'width')/], [c.getValue(c.getXisDatePicker(),'height')/]);
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]DatePicker[']'/];
 [elseif (c.isXisTimePicker())]
 self.[c.name.toLowerFirst()/]TimePicker = ['['/]['['/]UIDatePicker alloc[']'/] init[']'/];
 self.[c.name.toLowerFirst()/]TimePicker.datePickerMode = UIDatePickerModeTime;
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]TimePicker.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TimePicker[']'/];
+self.[c.name.toLowerFirst()/]TimePicker.frame = CGRectMake([c.getValue(c.getXisTimePicker(),'posX')/], [c.getValue(c.getXisTimePicker(),'posY')/], [c.getValue(c.getXisTimePicker(),'width')/], [c.getValue(c.getXisTimePicker(),'height')/]);
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TimePicker[']'/];
 [elseif (c.isXisList())]
-	[if (c.xisListIsSearchable())]
-self.[c.name.toLowerFirst()/]SearchBar = ['['/]['['/]UISearchBar alloc[']'/]init[']'/];
-self.[c.name.toLowerFirst()/]SearchBar.delegate = self;
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]SearchBar.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]SearchBar[']'/];
-	[/if]
 self.[c.name.toLowerFirst()/]TableView = ['['/]['['/]UITableView alloc[']'/]init[']'/];
 self.[c.name.toLowerFirst()/]TableView.rowHeight = 50;
 self.[c.name.toLowerFirst()/]TableView.delegate = self;
 self.[c.name.toLowerFirst()/]TableView.dataSource = self;
 self.[c.name.toLowerFirst()/]TableView.scrollEnabled = YES;
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]TableView.frame = CGRectMake(x-origin, y-origin, width, height);
-//['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TableView[']'/];
+	[if (c.xisListIsSearchable())]
+self.[c.name.toLowerFirst()/]SearchBar = ['['/]['['/]UISearchBar alloc[']'/]init[']'/];
+self.[c.name.toLowerFirst()/]SearchBar.delegate = self;
+self.[c.name.toLowerFirst()/]SearchBar.frame = CGRectMake([c.getValue(c.getXisList(),'posX')/], [c.getValue(c.getXisList(),'posY')/], [c.getValue(c.getXisList(),'width')/], 50);
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]SearchBar[']'/];
+self.[c.name.toLowerFirst()/]TableView.frame = CGRectMake([c.getValue(c.getXisList(),'posX')/], [c.getValue(c.getXisList(),'posY')/]+50, [c.getValue(c.getXisList(),'width')/], [c.getValue(c.getXisList(),'height')/]-50);
+	[else]
+self.[c.name.toLowerFirst()/]TableView.frame = CGRectMake([c.getValue(c.getXisList(),'posX')/], [c.getValue(c.getXisList(),'posY')/], [c.getValue(c.getXisList(),'width')/], [c.getValue(c.getXisList(),'height')/]);		
+	[/if]
+['['/]self.view addSubview:self.[c.name.toLowerFirst()/]TableView[']'/];
 [elseif (c.isXisMapView())]
 self.[c.name.toLowerFirst()/]MapView = ['['/]['['/]MKMapView alloc[']'/]init[']'/];
 self.[c.name.toLowerFirst()/]MapView.mapType = MKMapTypeStandard;
@@ -75,10 +59,13 @@ self.[c.name.toLowerFirst()/]MapView.zoomEnabled = YES;
 self.[c.name.toLowerFirst()/]MapView.scrollEnabled = YES;
 self.[c.name.toLowerFirst()/]MapView.showsUserLocation = YES;
 self.[c.name.toLowerFirst()/]MapView.delegate = self;
-//Set the size and position and add to view. The order in which widgets are added to the
-//view affect the application, as view can be on top of each other.
-//self.[c.name.toLowerFirst()/]MapView.frame = CGRectMake(x-origin, y-origin, width, height);
+self.[c.name.toLowerFirst()/]MapView.frame = CGRectMake([c.getValue(c.getXisMapView(),'posX')/], [c.getValue(c.getXisMapView(),'posY')/], [c.getValue(c.getXisMapView(),'width')/], [c.getValue(c.getXisMapView(),'height')/]);
 //['['/]self.view addSubview:self.[c.name.toLowerFirst()/]MapView[']'/];
+[elseif (c.isXisDropdown())]
+self.[c.name.toLowerFirst()/]PickerView = ['['/]['['/]UIPickerView alloc[']'/]initWithFrame:CGRectMake([c.getValue(c.getXisDropdown(),'posX')/], [c.getValue(c.getXisDropdown(),'posY')/], [c.getValue(c.getXisDropdown(),'width')/], [c.getValue(c.getXisDropdown(),'height')/])];
+self.[c.name.toLowerFirst()/]PickerView.delegate = self;
+self.[c.name.toLowerFirst()/]PickerView.dataSource = self;
+self.[c.name.toLowerFirst()/]PickerView.showsSelectionIndicator = YES;	
 [/if]
 
 [comment]
@@ -180,7 +167,7 @@ if (mMap[c.name.toUpperFirst()/] == null) {
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 
 }
-	[/if]
+	[/if]	
 [elseif (c.isXisDatePicker())]
 //Datepicker functions
 
@@ -234,7 +221,28 @@ if (mMap[c.name.toUpperFirst()/] == null) {
 	
 [elseif (c.isXisTimePicker())]
 //Timepicker functions
-		
+
+[elseif (c.isXisDropdown())]
+//PickerView/Dropdown functions	
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow: (NSInteger)row inComponent:(NSInteger)component{
+    
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 1;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+
+}	
 [/if]
 [/template]
 

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XISMobile="http:///schemas/XISMobile/_SXapEFhTEeOjBoMcdovZrg/10" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/XISMobile/_SXapEFhTEeOjBoMcdovZrg/10 file:/Users/matssandvoll/git/Model-To-Do/To-Do%20kopi/models/model.profile.uml#_SXapEVhTEeOjBoMcdovZrg">
+  <uml:Model xmi:id="_rVYkAHk4EeOwd-qlLEdZ9Q" name="MyApplication">
+    <packagedElement xmi:type="uml:Class" xmi:id="_ww-qAHk4EeOwd-qlLEdZ9Q" name="Task">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__uS94Hk4EeOwd-qlLEdZ9Q" name="Name" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AAXlUHk5EeOwd-qlLEdZ9Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AAXlUXk5EeOwd-qlLEdZ9Q" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_AAYMYHk5EeOwd-qlLEdZ9Q">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LBd7QHk5EeOwd-qlLEdZ9Q" name="Image" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ltn2oHk5EeOwd-qlLEdZ9Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LtodsHk5EeOwd-qlLEdZ9Q" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_LtpEwHk5EeOwd-qlLEdZ9Q">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XrGVQHk5EeOwd-qlLEdZ9Q" name="category" type="_zP5jgHk4EeOwd-qlLEdZ9Q" association="_XrG8UHk5EeOwd-qlLEdZ9Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XrGVQXk5EeOwd-qlLEdZ9Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XrGVQnk5EeOwd-qlLEdZ9Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_i2aXIHk5EeOwd-qlLEdZ9Q" name="note" type="_yTj3EHk4EeOwd-qlLEdZ9Q" association="_i2a-MHk5EeOwd-qlLEdZ9Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i2aXIXk5EeOwd-qlLEdZ9Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i2aXInk5EeOwd-qlLEdZ9Q" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yTj3EHk4EeOwd-qlLEdZ9Q" name="Note">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PsYLMHk5EeOwd-qlLEdZ9Q" name="Url" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P-WsAHk5EeOwd-qlLEdZ9Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P-XTEHk5EeOwd-qlLEdZ9Q" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_P-X6IHk5EeOwd-qlLEdZ9Q">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9Rs_0HldEeOoIpZfWkfcMw" name="task" type="_ww-qAHk4EeOwd-qlLEdZ9Q" association="_9RuN8HldEeOoIpZfWkfcMw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9Rs_0XldEeOoIpZfWkfcMw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9Rs_0nldEeOoIpZfWkfcMw" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zP5jgHk4EeOwd-qlLEdZ9Q" name="Category">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_FMP0UHk5EeOwd-qlLEdZ9Q" name="Title" visibility="public">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FiwP0Hk5EeOwd-qlLEdZ9Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Fixd8Hk5EeOwd-qlLEdZ9Q" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_FiyFAHk5EeOwd-qlLEdZ9Q">
+          <value xsi:nil="true"/>
+        </defaultValue>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_XrG8UHk5EeOwd-qlLEdZ9Q" name="task_category_1" memberEnd="_XrG8UXk5EeOwd-qlLEdZ9Q _XrGVQHk5EeOwd-qlLEdZ9Q">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_XrG8UXk5EeOwd-qlLEdZ9Q" name="task" type="_ww-qAHk4EeOwd-qlLEdZ9Q" association="_XrG8UHk5EeOwd-qlLEdZ9Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XrG8Unk5EeOwd-qlLEdZ9Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XrG8U3k5EeOwd-qlLEdZ9Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_i2a-MHk5EeOwd-qlLEdZ9Q" name="task_note_1" memberEnd="_i2a-MXk5EeOwd-qlLEdZ9Q _i2aXIHk5EeOwd-qlLEdZ9Q">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_i2a-MXk5EeOwd-qlLEdZ9Q" name="task" type="_ww-qAHk4EeOwd-qlLEdZ9Q" association="_i2a-MHk5EeOwd-qlLEdZ9Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_i2a-Mnk5EeOwd-qlLEdZ9Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_i2a-M3k5EeOwd-qlLEdZ9Q" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oYAXcHk5EeOwd-qlLEdZ9Q" name="MainScreen">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_vUtD0Hk5EeOwd-qlLEdZ9Q" name="menu"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_4JmA4Hk5EeOwd-qlLEdZ9Q" name="list"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Gvky0Hk6EeOwd-qlLEdZ9Q" name="house"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_9RuN8HldEeOoIpZfWkfcMw" name="note_task_1" memberEnd="_9RuN8XldEeOoIpZfWkfcMw _9Rs_0HldEeOoIpZfWkfcMw">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_9RuN8XldEeOoIpZfWkfcMw" name="note" type="_yTj3EHk4EeOwd-qlLEdZ9Q" association="_9RuN8HldEeOoIpZfWkfcMw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9RuN8nldEeOoIpZfWkfcMw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9RuN83ldEeOoIpZfWkfcMw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_3c-A4Hk4EeOwd-qlLEdZ9Q">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3dJnEHk4EeOwd-qlLEdZ9Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="model.profile.uml#_08dF8HcJEeOsZuyhiB0NnA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="model.profile.uml#_EUKFkB9vEeOZ6al_I843SA"/>
+    </profileApplication>
+  </uml:Model>
+  <XISMobile:XisEntity xmi:id="_4zbdgHk4EeOwd-qlLEdZ9Q" base_Class="_ww-qAHk4EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntity xmi:id="_5sl6IHk4EeOwd-qlLEdZ9Q" base_Class="_zP5jgHk4EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntity xmi:id="_7SdEsHk4EeOwd-qlLEdZ9Q" base_Class="_yTj3EHk4EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntityAttribute xmi:id="_AblhsHk5EeOwd-qlLEdZ9Q" type="String" base_Property="__uS94Hk4EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntityAttribute xmi:id="_Gw1MgHk5EeOwd-qlLEdZ9Q" type="String" base_Property="_FMP0UHk5EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntityAttribute xmi:id="_MLrroHk5EeOwd-qlLEdZ9Q" type="Image" base_Property="_LBd7QHk5EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntityAttribute xmi:id="_SMhMsHk5EeOwd-qlLEdZ9Q" type="URL" base_Property="_PsYLMHk5EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisInteractionSpace xmi:id="_sMZPEHk5EeOwd-qlLEdZ9Q" isMainScreen="true" base_Class="_oYAXcHk5EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisMenu xmi:id="_xHblsHk5EeOwd-qlLEdZ9Q" posX="1000" base_Class="_vUtD0Hk5EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisList xmi:id="_6R6YQHk5EeOwd-qlLEdZ9Q" base_Class="_4JmA4Hk5EeOwd-qlLEdZ9Q" searchBy="testSearch"/>
+  <XISMobile:XisEntity xmi:id="_JgFyoHk6EeOwd-qlLEdZ9Q" base_Class="_Gvky0Hk6EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntityAssociation xmi:id="_p7LQAHldEeOoIpZfWkfcMw" base_Association="_XrG8UHk5EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntityAssociation xmi:id="_rYC2oHldEeOoIpZfWkfcMw" base_Association="_i2a-MHk5EeOwd-qlLEdZ9Q"/>
+  <XISMobile:XisEntityAssociation xmi:id="_-m204HldEeOoIpZfWkfcMw" base_Association="_9RuN8HldEeOoIpZfWkfcMw"/>
+</xmi:XMI>

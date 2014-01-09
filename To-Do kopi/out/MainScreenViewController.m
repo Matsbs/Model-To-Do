@@ -1,10 +1,10 @@
-#import "Class1ViewController.h"
+#import "MainScreenViewController.h"
 
-@interface Class1ViewController ()
+@interface MainScreenViewController ()
 
 @end
 
-@implementation Class1ViewController
+@implementation MainScreenViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -12,39 +12,21 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
 	    
-    self.tasks = [self.dbManager getAllTasks];
-	self.title = @"mainscreenname";
+    
 
-    self.listSearchBar = [[UISearchBar alloc]init];
-    self.listSearchBar.delegate = self;
-    //Set the size and position and add to view. The order in which widgets are added to the
-    //view affect the application, as view can be on top of each other.
-    //self.listSearchBar.frame = CGRectMake(x-origin, y-origin, width, height);
-    //[self.view addSubview:self.listSearchBar];
     self.listTableView = [[UITableView alloc]init];
     self.listTableView.rowHeight = 50;
     self.listTableView.delegate = self;
     self.listTableView.dataSource = self;
     self.listTableView.scrollEnabled = YES;
-    //Set the size and position and add to view. The order in which widgets are added to the
-    //view affect the application, as view can be on top of each other.
-    //self.listTableView.frame = CGRectMake(x-origin, y-origin, width, height);
-    //[self.view addSubview:self.listTableView];
+    self.listSearchBar = [[UISearchBar alloc]init];
+    self.listSearchBar.delegate = self;
+    self.listSearchBar.frame = CGRectMake(0, 0, 0, 50);
+    [self.view addSubview:self.listSearchBar];
+    self.listTableView.frame = CGRectMake(0, 0+50, 0, 0-50);
+    [self.view addSubview:self.listTableView];
     
-    self.labelLabel = [[UILabel alloc] init];
-    //Set the size and position and add to view. The order in which widgets are added to the
-    //view affect the application, as view can be on top of each other.
-    //self.labelLabel.frame = CGRectMake(x-origin, y-origin, width, height);
-    //[self.view addSubview:self.labelLabel];
 
-    NSMutableArray *barButtons = [[NSMutableArray alloc]init];
-    UIBarButtonItem *item2Button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(operation2:)];    
-    [barButtons addObject:item2Button];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *item1Button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(operation1:)];    
-    [barButtons addObject:item1Button];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    self.navigationItem.rightBarButtonItems = barButtons;
 }
 
 - (void)reloadTableData:(NewTaskViewController *)controller{
@@ -53,21 +35,7 @@
 }
 
 
-- (IBAction)operation2:(id)sender {
-    //OK operation
-	
-    NewTaskViewController *newTaskView = [[NewTaskViewController alloc] init];
-    newTaskView.delegate = self;
-    [self.navigationController pushViewController:newTaskView animated:YES];	
-}
-- (IBAction)operation1:(id)sender {
-    //Cancel operation, navigate to mainscreen
-    [self.navigationController popToRootViewControllerAnimated:YES];
-	
-    NewTaskViewController *newTaskView = [[NewTaskViewController alloc] init];
-    newTaskView.delegate = self;
-    [self.navigationController pushViewController:newTaskView animated:YES];	
-}
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -159,6 +127,5 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 
 }
-
 
 
